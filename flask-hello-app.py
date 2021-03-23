@@ -8,6 +8,9 @@ class Person(db.Model):
     __tablename__ = 'persons'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(), nullable=False)
+
+db.create_all() #table-called persons-is created 
+
 @app.route('/')
 def index():
     return 'Hello World!'
