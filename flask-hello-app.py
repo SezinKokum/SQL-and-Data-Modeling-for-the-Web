@@ -13,7 +13,8 @@ db.create_all() #table-called persons-is created
 
 @app.route('/')
 def index():
-    return 'Hello World!'
+    person = Person.query.first() #it takes the first element's name from table persons
+    return 'Hello ' + person.name
 
 #you can run this app by writing the command below to terminal
 #FLASK_APP=flask-hello-app.py flask run
